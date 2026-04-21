@@ -41,9 +41,35 @@ bun +args:
 
 install: (composer "install --ignore-platform-req=ext-intl") (bun "install")
 
-# ── Tests & coverage (inside a running backend container) ─────────
-test *args:
+shell-mcp:
+    docker compose exec mcp sh
+
+# ── Tests & coverage ──────────────────────────────────────────────
+test-backend *args:
     docker compose exec backend vendor/bin/phpunit {{args}}
+
+test-mcp:
+    docker compose exec mcp npx jest
+
+test-frontend:
+    docker compose exec frontend bun run test
+
+test-all: test-backend test-mcp test-frontend
+
+logs-mcp:
+    docker compose logs -f --tail=200 mcp
+
+log:
+    @just logs
+
+logs-frontend:
+    @just logs frontend
+
+logs-backend:
+    @just logs backend
+
+logs-db:
+    @just logs db
 
 coverage:
     docker compose exec backend vendor/bin/phpunit \

@@ -5,12 +5,26 @@ services:
       PHP_IDE_CONFIG: "serverName=dentalopez"
     volumes:
       - ./backend:/app
+      - uploads_data:/uploads
     command: php-fpm
+
+  mcp:
+    build:
+      context: ./mcp
+      target: dev
+    volumes:
+      - ./mcp:/app
+      - /app/node_modules
+      - uploads_data:/uploads
+    environment:
+      NODE_ENV: development
+    command: npx tsx watch src/index.ts
+    ports: ["3001:3001"]
 
   frontend:
     image: oven/bun:1-alpine
     working_dir: /app
-    command: sh -c "bun install && bun run dev"
+    command: sh -c "bun install && bun dev"
     volumes:
       - ./frontend:/app
       - /app/node_modules
