@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/hlorenzoz/.claude/**)",
+      "WebFetch(domain:hub.docker.com)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(docker run *)",
+      "Bash(docker compose *)",
+      "Bash(docker build *)",
+      "Bash(npm view *)",
+      "Bash(npm pack *)",
+      "Bash(curl -s https://registry.npmjs.org/next/16.2.4)",
+      "Bash(docker info *)",
+      "Bash(curl -si http://localhost/api/hello)",
+      "Bash(curl -s http://localhost/api/hello)",
+      "Bash(python3 -c ' *)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost/)",
+      "Bash(just hello *)",
+      "Bash(just test *)"
+    ]
+  }
+}

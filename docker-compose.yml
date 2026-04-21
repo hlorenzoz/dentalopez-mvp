@@ -1,0 +1,46 @@
+services:
+  caddy:
+    image: caddy:2.11-alpine
+    restart: unless-stopped
+    ports: ["80:80"]
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./backend/public:/app/public:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [backend]
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      YII_ENV: prod
+      YII_DEBUG: "false"
+      DB_HOST: db
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on: [db]
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      BACKEND_INTERNAL_URL: http://caddy
+      NEXT_PUBLIC_BACKEND_URL: http://localhost
+
+  db:
+    image: mariadb:lts
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    volumes: [db_data:/var/lib/mysql]
+
+volumes:
+  caddy_data:
+  caddy_config:
+  db_data:

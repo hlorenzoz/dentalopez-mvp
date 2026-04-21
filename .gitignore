@@ -1,0 +1,8 @@
+.env
+backend/vendor/
+backend/runtime/
+backend/config/packages/
+backend/.merge-plan.php
+backend/.phpunit.cache/
+frontend/node_modules/
+frontend/.next/

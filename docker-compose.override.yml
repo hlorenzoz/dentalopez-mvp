@@ -1,0 +1,21 @@
+services:
+  backend:
+    environment:
+      YII_DEBUG: "true"
+      PHP_IDE_CONFIG: "serverName=dentalopez"
+    volumes:
+      - ./backend:/app
+    command: php-fpm
+
+  frontend:
+    image: oven/bun:1-alpine
+    working_dir: /app
+    command: sh -c "bun install && bun run dev"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      NODE_ENV: development
+      WATCHPACK_POLLING: "true"
+    ports: ["3000:3000"]

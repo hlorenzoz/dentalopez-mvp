@@ -1,0 +1,6 @@
+vendor/
+runtime/
+.env
+tests/
+.phpunit.cache/
+config/packages/
