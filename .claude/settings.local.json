@@ -19,7 +19,16 @@
       "Read(//tmp/**)",
       "Bash(curl -s http://localhost/)",
       "Bash(just hello *)",
-      "Bash(just test *)"
+      "Bash(just test *)",
+      "Bash(grep -r \"GitHub\\\\|Actions\\\\|UI\\\\|mock\" /Users/hlorenzoz/databank/COD3/projects/DentaLopez/mvp --include=\"*.md\" --include=\"*.txt\" ! -path \"*/node_modules/*\" ! -path \"*/vendor/*\" ! -path \"*/.git/*\")",
+      "Bash(docker builder *)",
+      "Bash(curl -s http://localhost/mcp/health)",
+      "Bash(curl -si -F \"file=@/tmp/test.jpg;type=image/jpeg\" http://localhost/api/upload)",
+      "Bash(curl -sv http://localhost/mcp/health)",
+      "Bash(curl -s -F \"file=@/Users/hlorenzoz/databank/COD3/projects/DentaLopez/mvp/backend/public/index.php\" http://localhost/api/upload)",
+      "Bash(curl -s -F \"file=@/System/Library/Desktop Pictures/.thumbnails/Calibrate 5120x3200.jpg;type=image/jpeg\" http://localhost/api/upload)",
+      "Bash(curl -sN --max-time 60 \"http://localhost/mcp/stream/45110fec313213cb00dd73ea90a38158\")",
+      "Bash(curl -sN --max-time 90 \"http://localhost/mcp/stream/9f4af38862efbf388cc4daaa16c52f3a\")"
     ]
   }
 }

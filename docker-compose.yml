@@ -8,7 +8,7 @@ services:
       - ./backend/public:/app/public:ro
       - caddy_data:/data
       - caddy_config:/config
-    depends_on: [backend]
+    depends_on: [backend, mcp]
 
   backend:
     build: ./backend
@@ -20,7 +20,26 @@ services:
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
+      MCP_URL: http://mcp:3001
+    volumes:
+      - uploads_data:/uploads
     depends_on: [db]
+
+  mcp:
+    build: ./mcp
+    restart: unless-stopped
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      RESEND_TO: ${RESEND_TO}
+      RESEND_CC: ${RESEND_CC:-}
+      RESEND_DRY_RUN: ${RESEND_DRY_RUN:-false}
+      BACKEND_URL: http://backend
+    volumes:
+      - uploads_data:/uploads
+    depends_on: [backend]
 
   frontend:
     build: ./frontend
@@ -44,3 +63,4 @@ volumes:
   caddy_data:
   caddy_config:
   db_data:
+  uploads_data:

@@ -18,16 +18,20 @@ services:
       - uploads_data:/uploads
     environment:
       NODE_ENV: development
+      PORT: "3001"
     command: npx tsx watch src/index.ts
     ports: ["3001:3001"]
 
   frontend:
-    image: oven/bun:1-alpine
-    working_dir: /app
-    command: sh -c "bun install && bun dev"
+    build:
+      context: ./frontend
+      target: dev
+    image: mvp-frontend-dev
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - ./frontend/app:/app/app
+      - ./frontend/next.config.mjs:/app/next.config.mjs:ro
+      - ./frontend/tsconfig.json:/app/tsconfig.json:ro
+      - ./frontend/postcss.config.mjs:/app/postcss.config.mjs:ro
       - /app/.next
     environment:
       NODE_ENV: development

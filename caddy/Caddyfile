@@ -5,6 +5,13 @@
 :80 {
     encode zstd gzip
 
+    handle /mcp/* {
+        uri strip_prefix /mcp
+        reverse_proxy mcp:3001 {
+            flush_interval -1
+        }
+    }
+
     handle /api/* {
         root * /app/public
         php_fastcgi backend:9000 {

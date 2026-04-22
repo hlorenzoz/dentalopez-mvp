@@ -32,6 +32,9 @@ return [
             'yiisoft/router' => [
                 'config/params.php',
             ],
+            'yiisoft/db' => [
+                'config/params.php',
+            ],
             '/' => [
                 'params.php',
             ],

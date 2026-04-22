@@ -17,3 +17,14 @@ body {
   color: white;
   font-family: ui-sans-serif, system-ui, sans-serif;
 }
+
+.log-mono {
+  font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  font-size: 12px;
+}
+
+.stage-complete { color: #3fb950; }
+.stage-error    { color: #f85149; }
+.stage-running  { animation: spin 1s linear infinite; display: inline-block; }
+
+@keyframes spin { to { transform: rotate(360deg); } }

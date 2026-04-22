@@ -2,7 +2,7 @@
   "name": "dentalopez-frontend",
   "private": true,
   "scripts": {
-    "dev": "bun x next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "vitest run"

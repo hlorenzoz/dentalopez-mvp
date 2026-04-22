@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb8977581cca96c9dff8528d08a64393",
+    "content-hash": "3bcb11486e71dbf0af4ab136710e2201",
     "packages": [
         {
             "name": "alexkart/curl-builder",
@@ -1613,6 +1613,167 @@
             "time": "2025-12-19T19:11:23+00:00"
         },
         {
+            "name": "yiisoft/db",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/db.git",
+                "reference": "71c9f37596da41a910dee440d38f5d1bb303a39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/db/zipball/71c9f37596da41a910dee440d38f5d1bb303a39b",
+                "reference": "71c9f37596da41a910dee440d38f5d1bb303a39b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "php": "^8.0",
+                "psr/log": "^2.0|^3.0",
+                "psr/simple-cache": "^2.0|^3.0"
+            },
+            "require-dev": {
+                "maglnet/composer-require-checker": "^4.2",
+                "phpunit/phpunit": "^9.6|^10.0",
+                "rector/rector": "^1.0",
+                "roave/infection-static-analysis-plugin": "^1.16",
+                "spatie/phpunit-watcher": "^1.23",
+                "vimeo/psalm": "^4.30|^5.20",
+                "yiisoft/aliases": "^3.0",
+                "yiisoft/cache-file": "^3.1",
+                "yiisoft/di": "^1.0",
+                "yiisoft/event-dispatcher": "^1.0",
+                "yiisoft/json": "^1.0",
+                "yiisoft/log": "^2.0",
+                "yiisoft/var-dumper": "^1.5",
+                "yiisoft/yii-debug": "dev-master|dev-php80"
+            },
+            "type": "library",
+            "extra": {
+                "config-plugin": {
+                    "params": "params.php"
+                },
+                "config-plugin-options": {
+                    "source-directory": "config"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Db\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Yii Database",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "database",
+                "dbal",
+                "query-builder",
+                "sql",
+                "yii"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/db/issues/issues?state=open",
+                "source": "https://github.com/yiisoft/db",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-03-21T07:18:22+00:00"
+        },
+        {
+            "name": "yiisoft/db-mysql",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/db-mysql.git",
+                "reference": "d50d0b213dab2ba30aff834023201b1eb6e7d4bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/db-mysql/zipball/d50d0b213dab2ba30aff834023201b1eb6e7d4bf",
+                "reference": "d50d0b213dab2ba30aff834023201b1eb6e7d4bf",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-pdo": "*",
+                "php": "^8.0",
+                "psr/log": "^2.0|^3.0",
+                "yiisoft/db": "^1.2",
+                "yiisoft/json": "^1.0"
+            },
+            "require-dev": {
+                "maglnet/composer-require-checker": "^4.2",
+                "phpunit/phpunit": "^9.5|^10.0",
+                "rector/rector": "^1.0",
+                "roave/infection-static-analysis-plugin": "^1.16",
+                "spatie/phpunit-watcher": "^1.23",
+                "vimeo/psalm": "^4.30|^5.20",
+                "yiisoft/aliases": "^2.0",
+                "yiisoft/cache-file": "^3.1",
+                "yiisoft/log-target-file": "^2.0",
+                "yiisoft/var-dumper": "^1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Db\\Mysql\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "MySQL driver for Yii Database",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "database",
+                "dbal",
+                "mysql",
+                "query-builder",
+                "sql",
+                "yii"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "irc://irc.freenode.net/yii",
+                "issues": "https://github.com/yiisoft/db-mysql/issues",
+                "source": "https://github.com/yiisoft/db-mysql",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-03-21T07:23:37+00:00"
+        },
+        {
             "name": "yiisoft/definitions",
             "version": "3.4.1",
             "source": {
@@ -2144,6 +2305,74 @@
                 }
             ],
             "time": "2025-12-01T11:14:17+00:00"
+        },
+        {
+            "name": "yiisoft/json",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/json.git",
+                "reference": "6af88ed2c653f4b6cbe3ea9114e4aebc5a463c80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/json/zipball/6af88ed2c653f4b6cbe3ea9114e4aebc5a463c80",
+                "reference": "6af88ed2c653f4b6cbe3ea9114e4aebc5a463c80",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-simplexml": "*",
+                "php": "~7.4.0 || 8.0 - 8.5"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8.2",
+                "maglnet/composer-require-checker": "^3.8 || ^4.2",
+                "phpunit/phpunit": "^9.6.22",
+                "rector/rector": "^2.0.8",
+                "spatie/phpunit-watcher": "^1.23.6"
+            },
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true,
+                    "target-directory": "tools"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yiisoft\\Json\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Yii JSON encoding and decoding",
+            "homepage": "https://www.yiiframework.com/",
+            "keywords": [
+                "json"
+            ],
+            "support": {
+                "chat": "https://t.me/yii3en",
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/json/issues?state=open",
+                "source": "https://github.com/yiisoft/json",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2025-11-21T19:39:36+00:00"
         },
         {
             "name": "yiisoft/middleware-dispatcher",
